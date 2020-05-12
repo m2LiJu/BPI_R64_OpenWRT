@@ -46,3 +46,5 @@ Whole process should take around 2 minutes. You will see confirmation.
 At this stage you should have eMMC programmed and ready to boot. 
 unmount USB key, turn off power, remove uSD, change boot switch to 0 and power on. 
 R64 should boot from eMMC now.
+
+Wifi is working but TX power stuck on 6 dbm. I will update soon how to fix that. 
