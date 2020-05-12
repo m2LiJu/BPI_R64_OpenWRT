@@ -2,6 +2,7 @@
 OpenWRT on BPI R64 from eMMC
 
 Latest OpenWRT with kernel 5.4.40 on BPI R64 running from eMMC. 
+
 u-boot and scripts preparing boot partition from frank-w
 
 Prerequests:
