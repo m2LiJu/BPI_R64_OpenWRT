@@ -47,4 +47,28 @@ At this stage you should have eMMC programmed and ready to boot.
 unmount USB key, turn off power, remove uSD, change boot switch to 0 and power on. 
 R64 should boot from eMMC now.
 
-Wifi is working but TX power stuck on 6 dbm. I will update soon how to fix that. 
+
+Next step is to fix WiFi TX power. 
+On host machine in OpenWRT build folder replace 
+openwrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/mt76-2020-04-27-5f3ccc72/eeprom.c
+
+with the one provided and make whole image again with:
+
+make
+
+After process finish copy three new kernel modules:
+
+openwrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/mt76-2020-04-27-5f3ccc72/mt76.ko
+openwrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/mt76-2020-04-27-5f3ccc72/mt7615/mt7615-common.ko
+openwrt/build_dir/target-aarch64_cortex-a53_musl/linux-mediatek_mt7622/mt76-2020-04-27-5f3ccc72/mt7615/mt7615e.ko
+
+Connect to running R64 with sftp client. Im using BitviseSSH, and replace all three in  /lib/modules/5.4.40
+type in console
+
+reboot 
+
+and now WiFi should work correct. 
+
+
+
+
