@@ -6,8 +6,9 @@ tar xvzf r64-init-emmc-boot.tar.gz
 cp update.sh  r64-boot/
 cp uEnv.txt   r64-boot/
 
-git pull https://git.openwrt.org/openwrt/openwrt.git 
+git clone https://git.openwrt.org/openwrt/openwrt.git 
 cd openwrt
+git checkout 0fed36dd484272eb546dd69f4dc84221ca5f01a5
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
